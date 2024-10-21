@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../image/fondo-login.jpg");
+  background-image: url("../image/fondo-login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.formulario {
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+}
+
+.formulario h1 {
+  font-family: "Righteous";
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff5722;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.formulario input:focus {
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+.formulario label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.formulario input:focus + label,
+.formulario input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #ff5722;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #ff5722;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.formulario button:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
+}
+
+.registrarse {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.registrarse a {
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.registrarse a:hover {
+  color: hsl(192, 80%, 50%);
+}
+
+.recordar p {
+  margin-top: 10px;
+  color: hsl(0, 37%, 97%);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.recordar p:hover {
+  color: #ff5722;
+}
+
+.volver-inicio {
+  margin-top: 20px;
+}
+
+.volver-inicio a {
+  color: #ff5722;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.volver-inicio a:hover {
+  color: hsl(192, 80%, 50%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
