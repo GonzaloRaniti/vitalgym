@@ -9,8 +9,6 @@
   --bg-white: #fff;
   --bg-electric: #f0fbff;
   --nav-bg: #0f1525;
-
-  /* textos */
   --text: red;
 }
 
@@ -25,7 +23,6 @@ html {
 }
 
 /* SECCIÓN HEADER */
-
 header {
   background-image: url("../image/portada-1.jpg");
   background-size: cover;
@@ -51,7 +48,7 @@ header::before {
   z-index: 1;
 }
 
-/* menu hamburguesa */
+/* MENU HAMBURGUESA */
 #menu {
   display: none;
 }
@@ -61,6 +58,106 @@ label img {
   width: 30px;
   display: none;
 }
+
+.logo img {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid yellow;
+  z-index: 3;
+}
+
+.menu-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  z-index: 3;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Work Sans", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.navbar-list li a:hover {
+  color: var(--primary);
+}
+
+.header-content {
+  color: var(--bg-white);
+  z-index: 2;
+  padding: 20px;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.header-content h1 {
+  font-size: 5rem;
+  font-family: Righteous;
+  color: var(--text);
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+@keyframes btn-hover {
+  0% {
+    transform: scale(1);
+    background-color: var(--primary);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #4b463e;
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--background);
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.5rem 3rem;
+  color: var(--bg-white);
+  background-color: var(--primary);
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover {
+  animation: btn-hover 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+
+
 
 .logo img {
   width: 80px;
@@ -360,5 +457,154 @@ label img {
 }
 .contacto button:hover .overlay {
   width: 100%;
+}
+
+
+/* FOOTER */
+.footer {
+  background-color: #1e2326;;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo h2 {
+  font-size: 1.8rem;
+}
+
+.footer-links, .footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  list-style: none; 
+}
+
+.footer-links {
+  gap: 10px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer-links a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff8c00;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* Media Query para pantallas grandes */
+@media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+  }
+
+  .navbar-list {
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+  }
+
+  label img {
+    display: none; 
+  }
+
+  label img {
+    display: block;
+  }
+
+
+  #menu:checked + .navbar {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    background-color: var(--nav-bg);
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .navbar-list li {
+    margin: 10px 0;
+  }
+
+  .navbar-list li a {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--bg-electric);
+  }
+  
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-logo {
+    text-align: left;
+  }
+
+  .footer-links, .footer-social {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .footer-links {
+    gap: 30px;
+  }
+
+
 }
 
